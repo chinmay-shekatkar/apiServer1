@@ -1,0 +1,15 @@
+curl --data "param1=glass0004" localhost:1234/api/querypart
+
+curl -X GET -d "partRegistrationNumber='glass004'" localhost:1234/api/querypart
+
+
+curl http://127.0.0.1:8000/api/query/glass0004
+curl http://localhost:8080/query/glass0005
+curl http://127.0.0.1:8080/query/glass0004
+
+
+
+curl -d '{"partRegistrationNumber":"glass0005","partName":"glass-batch04","inboundDate":"00000000","outboundDate":"19032020","owner":"glass-org"}' -H "Content-Type: application/json" -X POST http://localhost:8080/addpart
+
+
+curl -d '{"Username":"chinmay","Password":"pass","Organization":"Glass"}' -H "Content-Type: application/json" -X POST http://localhost:8000/registerUserGlass/

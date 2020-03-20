@@ -1,0 +1,27 @@
+       var con = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "2121",
+            database: "users"
+          });
+
+        con.connect(function(err) {
+        console.log("Connection established!")
+        if (err) throw err;
+        con.query(`SELECT password FROM usercredentials WHERE username = '${userName}'`, function (err, result) {
+          if (err) throw err;
+          console.log(result);
+          const pass = result;
+        });
+      });
+
+
+
+      app.post('/loginUserGlass/', async function (req, res) {
+    const userName = req.body.Username;
+    const passWord = req.body.Password;
+    console.log(req.body.Organization);
+    try {
+      console.log("tryblock");
+   } catch(error){process.exit(1);}
+})
